@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@velvetrue.com",
+      "password": "password123",
+      "name": "Admin User",
+      "role": "admin",
+      "status": "Active"
+    },
+    {
+      "name": "Erica Florentino",
+      "email": "ericavenderica@gmail.com",
+      "password": "123456",
+      "role": "Admin",
+      "status": "Active",
+      "id": "27XEiVT"
+    },
+    {
+      "name": "erica",
+      "email": "e@e.com",
+      "password": "123456",
+      "role": "customer",
+      "status": "Active",
+      "id": "zD6dpTq"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Velvet Matte Lipstick - Terracotta",
+      "description": "Long-lasting matte lipstick in our signature terracotta shade.",
+      "price": 24,
+      "category": "makeup",
+      "subCategory": "lips",
+      "imageUrl": "/products/1.jpg",
+      "stock": 50,
+      "bestseller": true
+    },
+    {
+      "id": "2",
+      "name": "Luminous Silk Foundation",
+      "description": "Full coverage foundation with a natural finish.",
+      "price": 42,
+      "category": "makeup",
+      "subCategory": "face",
+      "imageUrl": "/products/2.jpg",
+      "stock": 40,
+      "bestseller": true
+    },
+    {
+      "id": "3",
+      "name": "Artistry Eye Palette - Warm",
+      "description": "12 highly pigmented warm shades for the creative soul.",
+      "price": 55,
+      "category": "makeup",
+      "subCategory": "eyes",
+      "imageUrl": "/products/3.jpg",
+      "stock": 30,
+      "bestseller": true
+    },
+    {
+      "id": "4",
+      "name": "Golden Hour Highlighter",
+      "description": "A soft powder highlighter for a natural glow.",
+      "price": 28,
+      "category": "makeup",
+      "subCategory": "face",
+      "imageUrl": "/products/4.jpg",
+      "stock": 25,
+      "bestseller": true
+    },
+    {
+      "id": "5",
+      "name": "Volumizing Mascara",
+      "description": "Intense black mascara for dramatic volume.",
+      "price": 18,
+      "category": "makeup",
+      "subCategory": "eyes",
+      "imageUrl": "/products/5.jpg",
+      "stock": 60,
+      "bestseller": true
+    },
+    {
+      "id": "6",
+      "name": "Hydrating Primer",
+      "description": "Prepares skin for flawless makeup application.",
+      "price": 30,
+      "category": "makeup",
+      "subCategory": "face",
+      "imageUrl": "/products/6.jpg",
+      "stock": 35,
+      "bestseller": false
+    },
+    {
+      "id": "7",
+      "name": "Professional Brush Set",
+      "description": "10-piece vegan brush set for face and eyes.",
+      "price": 65,
+      "category": "accessories",
+      "subCategory": "tools",
+      "imageUrl": "/products/7.jpg",
+      "stock": 20,
+      "bestseller": false
+    },
+    {
+      "id": "8",
+      "name": "Setting Spray",
+      "description": "Locks makeup in place for up to 16 hours.",
+      "price": 22,
+      "category": "makeup",
+      "subCategory": "face",
+      "imageUrl": "/products/8.jpg",
+      "stock": 45,
+      "bestseller": false
+    },
+    {
+      "id": "9",
+      "name": "Cream Blush - Peony",
+      "description": "Blendable cream blush for a fresh flush.",
+      "price": 26,
+      "category": "makeup",
+      "subCategory": "face",
+      "imageUrl": "/products/9.jpg",
+      "stock": 30,
+      "bestseller": false
+    },
+    {
+      "id": "10",
+      "name": "Liquid Eyeliner",
+      "description": "Precision tip for the perfect wing.",
+      "price": 16,
+      "category": "makeup",
+      "subCategory": "eyes",
+      "imageUrl": "/products/10.jpg",
+      "stock": 55,
+      "bestseller": false
+    }
+  ],
+  "carts": [],
+  "orders": [
+    {
+      "userId": "27XEiVT",
+      "customer": "Erica Florentino",
+      "date": "Feb 5, 2026",
+      "total": "$52.00",
+      "status": "Processing",
+      "items": 1,
+      "orderItems": [
+        {
+          "id": "2",
+          "name": "Luminous Silk Foundation",
+          "price": 42,
+          "imageUrl": "/products/2.jpg"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "userId": "zD6dpTq",
+      "customer": "erica",
+      "date": "Feb 5, 2026",
+      "total": "$76.00",
+      "status": "Pending",
+      "items": 2,
+      "orderItems": [
+        {
+          "id": "1",
+          "name": "Velvet Matte Lipstick - Terracotta",
+          "price": 24,
+          "imageUrl": "/products/1.jpg"
+        },
+        {
+          "id": "2",
+          "name": "Luminous Silk Foundation",
+          "price": 42,
+          "imageUrl": "/products/2.jpg"
+        }
+      ],
+      "id": 6
+    }
+  ],
+  "wishlists": []
+}

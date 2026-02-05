@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C5A059;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F2D694;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C5A059;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E39A7B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D67D5B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base -->
+  <rect x="35" y="55" width="30" height="35" fill="#1a1a1a" rx="2" />
+  
+  <!-- Gold Ring -->
+  <rect x="35" y="48" width="30" height="7" fill="url(#gold)" />
+  
+  <!-- Lipstick -->
+  <path d="M38 48 L38 25 Q38 10 50 10 Q62 10 62 25 L62 48 Z" fill="url(#lip)" />
+  
+  <!-- Shine -->
+  <path d="M42 20 Q42 15 45 15" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none" />
+</svg>
