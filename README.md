@@ -1,27 +1,32 @@
-# Velvet Rue - E-Commerce Platform
+# Velvet Rue
 
-A modern, full-featured e-commerce application built with React, Vite, and Node.js (via JSON Server). Velvet Rue offers a seamless shopping experience with a focus on beauty and lifestyle products.
+**A Premium Beauty E-Commerce Experience**
 
-## Features
+Velvet Rue is a modern, responsive e-commerce platform designed for the beauty industry. Built with **React** and **Node.js**, it features a seamless shopping experience, robust user authentication, and a comprehensive admin dashboard for inventory and order management.
 
-- **Product Catalog**: Browse a wide range of makeup and accessories with filtering and sorting capabilities.
-- **User Authentication**: Secure login and registration system for customers and admins.
-- **Shopping Cart**: Fully functional cart with persistent state.
-- **Admin Dashboard**: Comprehensive admin panel to manage users, orders, and view site analytics.
-- **Responsive Design**: Optimized for all devices, from desktops to mobile phones.
-- **Wishlist**: Save favorite items for later.
+---
 
-## Tech Stack
+## 🚀 Key Features
 
-- **Frontend**: React, React Router, Tailwind CSS, Zustand (State Management)
-- **Backend**: JSON Server (Simulated REST API)
+*   **🛍️ Dynamic Product Catalog**: Advanced filtering, sorting, and search capabilities.
+*   **🔐 Secure Authentication**: Customer and Admin login portals.
+*   **🛒 Smart Cart & Wishlist**: Persistent state management for a smooth user journey.
+*   **📊 Admin Dashboard**: Real-time analytics, user management, and order processing.
+*   **📱 Fully Responsive**: Mobile-first design ensuring a perfect look on any device.
 
-## Getting Started
+## 🛠️ Tech Stack
+
+*   **Frontend**: React, Vite, React Router, Modern CSS
+*   **Backend**: Node.js, JSON Server (REST API)
+*   **Deployment**: Vercel (Frontend) & Render (Backend)
+
+---
+
+## 📦 Getting Started
 
 ### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
+*   Node.js (v16+)
+*   npm
 
 ### Installation
 
@@ -31,40 +36,21 @@ A modern, full-featured e-commerce application built with React, Vite, and Node.
     cd velvet-rue
     ```
 
-2.  **Install dependencies**
-    
-    *Client:*
+2.  **Setup Frontend**
     ```bash
     cd client
     npm install
-    ```
-
-    *Server:*
-    ```bash
-    cd ../server
-    npm install
-    ```
-
-3.  **Run the application**
-
-    *Start the Backend Server (Terminal 1):*
-    ```bash
-    cd server
-    npm start
-    ```
-
-    *Start the Frontend Client (Terminal 2):*
-    ```bash
-    cd client
+    # Create a .env file with: VITE_API_URL=http://localhost:3001
     npm run dev
     ```
 
-4.  **Open in Browser**
-    Visit `http://localhost:5173` to view the application.
+3.  **Setup Backend**
+    ```bash
+    cd server
+    npm install
+    npm start
+    ```
 
-## Project Structure
+---
 
-- `/client`: React frontend application
-- `/server`: Mock backend API and database
-
-© 2025 Erica Venderica. All Rights Reserved.
+*Designed and developed by Erica Venderica*
