@@ -1652,7 +1652,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  overflow-x: auto; /
+  overflow-x: auto;
 }
 
 @media (min-width: 1024px) {
