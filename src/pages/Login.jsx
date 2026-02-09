@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
+import API_URL from '../config';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Login = () => {
 
     try {
       // 1. fetch user by email
-      const response = await fetch(`/api/users?email=${email}`);
+      const response = await fetch(`${API_URL}/api/users?email=${email}`);
       const users = await response.json();
 
       if (users.length === 0) {

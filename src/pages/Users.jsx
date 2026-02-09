@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Trash2, Edit, X } from 'lucide-react';
+import API_URL from '../config';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -14,7 +15,7 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('/api/users');
+      const response = await fetch(`${API_URL}/api/users`);
       const data = await response.json();
       //ensure status exists
       const usersWithStatus = data.map(u => ({ ...u, status: u.status || 'Active' }));
@@ -32,7 +33,7 @@ const Users = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`/api/users/${id}`, { method: 'DELETE' });
+      await fetch(`${API_URL}/api/users/${id}`, { method: 'DELETE' });
       setUsers(users.filter(user => user.id !== id));
       showNotification('User deleted successfully');
     } catch (error) {
@@ -56,7 +57,7 @@ const Users = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = isEditing ? `/api/users/${currentUser.id}` : '/api/users';
+      const url = isEditing ? `${API_URL}/api/users/${currentUser.id}` : `${API_URL}/api/users`;
       const method = isEditing ? 'PUT' : 'POST';
       
       const response = await fetch(url, {

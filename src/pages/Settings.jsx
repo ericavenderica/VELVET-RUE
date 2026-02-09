@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User, Bell, Shield, Check } from 'lucide-react';
+import API_URL from '../config';
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -15,7 +16,7 @@ const Settings = () => {
         const userId = localStorage.getItem('userId');
         if (userId) {
             try {
-                const response = await fetch(`/api/users/${userId}`);
+                const response = await fetch(`${API_URL}/api/users/${userId}`);
                 if (response.ok) {
                     const data = await response.json();
                     setProfileData({

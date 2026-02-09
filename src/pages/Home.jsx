@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { RefreshCcw, CheckCircle, Headphones } from 'lucide-react';
+import API_URL from '../config';
 
 const Home = () => {
   const [latestProducts, setLatestProducts] = useState([]);
@@ -9,7 +10,7 @@ const Home = () => {
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch(`${API_URL}/api/products`)
       .then(res => res.json())
       .then(data => {
         setLatestProducts(data.slice(0, 5));

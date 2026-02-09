@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
+import API_URL from '../config';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -17,8 +18,8 @@ const Register = () => {
     setError('');
 
     try {
-      // check if user already exists
-      const checkRes = await fetch(`/api/users?email=${formData.email}`);
+      // 1. Check if user already exists
+      const checkRes = await fetch(`${API_URL}/api/users?email=${formData.email}`);
       const existingUsers = await checkRes.json();
 
       if (existingUsers.length > 0) {
@@ -26,7 +27,7 @@ const Register = () => {
         return;
       }
 
-      // create new user
+      // 2. Create new user
       const newUser = {
         name: formData.name,
         email: formData.email,
@@ -35,7 +36,7 @@ const Register = () => {
         status: 'Active'
       };
 
-      const createRes = await fetch('/api/users', {
+      const createRes = await fetch(`${API_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newUser)

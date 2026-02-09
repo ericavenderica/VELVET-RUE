@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
+import API_URL from '../config';
 
 const Products = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`/api/products/${id}`);
+        const response = await fetch(`${API_URL}/api/products/${id}`);
         if (!response.ok) throw new Error('Product not found');
         const data = await response.json();
         setProduct(data);

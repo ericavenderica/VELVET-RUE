@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Eye, X } from 'lucide-react';
+import API_URL from '../config';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -12,7 +13,7 @@ const Orders = () => {
         const userId = localStorage.getItem('userId');
         const token = localStorage.getItem('customerToken');
         
-        let url = '/api/orders';
+        let url = `${API_URL}/api/orders`;
 
         if (token !== 'valid-admin' && userId) {
              url += `?userId=${userId}`;
@@ -38,7 +39,7 @@ const Orders = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`/api/orders/${orderId}`, {
+      const response = await fetch(`${API_URL}/api/orders/${orderId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

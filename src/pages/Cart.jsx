@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { ShopContext } from '../context/ShopContext';
+import API_URL from '../config';
 
 const Cart = () => {
   const { cartItems, clearCart } = useContext(ShopContext);
@@ -35,7 +36,7 @@ const Cart = () => {
   
     if (userId) {
         try {
-            const userRes = await fetch(`/api/users/${userId}`);
+            const userRes = await fetch(`${API_URL}/api/users/${userId}`);
             if (userRes.ok) {
                 const userData = await userRes.json();
                 customerName = userData.name;
@@ -63,7 +64,7 @@ const Cart = () => {
     };
 
     try {
-      const response = await fetch('/api/orders', {
+      const response = await fetch(`${API_URL}/api/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order)

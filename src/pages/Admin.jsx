@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DollarSign, ShoppingBag, Users, TrendingUp } from 'lucide-react';
+import API_URL from '../config';
 
 const Admin = () => {
   const [stats, setStats] = useState({
@@ -15,11 +16,11 @@ const Admin = () => {
     const fetchData = async () => {
       try {
         //fetch Orders
-        const ordersRes = await fetch('/api/orders');
+        const ordersRes = await fetch(`${API_URL}/api/orders`);
         const orders = await ordersRes.json();
         
         //fetch Users
-        const usersRes = await fetch('/api/users');
+        const usersRes = await fetch(`${API_URL}/api/users`);
         const users = await usersRes.json();
 
         // calculate revenue

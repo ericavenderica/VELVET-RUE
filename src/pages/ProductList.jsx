@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { Heart } from 'lucide-react';
+import API_URL from '../config';
 
 const ProductList = () => {
   const { search, addToWishlist, removeFromWishlist, isInWishlist } = useContext(ShopContext);
@@ -20,7 +21,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch(`${API_URL}/api/products`);
         if (!response.ok) {
            throw new Error('Network response was not ok');
         }

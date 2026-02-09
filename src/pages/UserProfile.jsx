@@ -1,24 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User, Mail, Package, MapPin, LogOut } from 'lucide-react';
+import API_URL from '../config';
 
 const UserProfile = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('profile');
   const [user, setUser] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const [selectedOrder, setSelectedOrder] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchUserData = async () => {
       const userId = localStorage.getItem('userId');
       if (userId) {
         try {
-          const response = await fetch(`/api/users/${userId}`);
-          if (response.ok) {
-            const data = await response.json();
-            setUser(data);
+          const userRes = await fetch(`${API_URL}/api/users/${userId}`);
+          if (userRes.ok) {
+            setUser(await userRes.json());
+          }
+
+          const ordersRes = await fetch(`${API_URL}/api/orders?userId=${userId}`);
+          if (ordersRes.ok) {
+            setOrders(await ordersRes.json());
           }
         } catch (error) {
-          console.error('Error fetching user:', error);
+          console.error('Error fetching profile data:', error);
         } finally {
           setLoading(false);
         }
@@ -26,7 +34,8 @@ const UserProfile = () => {
         setLoading(false);
       }
     };
-    fetchUser();
+
+    fetchUserData();
   }, []);
 
   const handleLogout = () => {
